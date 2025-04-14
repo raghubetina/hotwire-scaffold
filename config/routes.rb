@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "things#index"
+
   resources :things
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

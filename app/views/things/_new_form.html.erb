@@ -1,0 +1,5 @@
+<div id="<%= dom_id(Thing, :new_form) %>" style="display: flex; justify-content: space-between; max-width: 500px; border: thin grey solid; padding: 10px">
+  <div data-turbo-permanent>
+    <%= render "form", thing: Thing.new %>
+  </div>
+</div>

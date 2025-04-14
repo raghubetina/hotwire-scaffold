@@ -25,6 +25,7 @@ class ThingsController < ApplicationController
 
     respond_to do |format|
       if @thing.save
+        format.turbo_stream
         format.html { redirect_back fallback_location: root_url, notice: "Thing was successfully created." }
         format.json { render :show, status: :created, location: @thing }
       else

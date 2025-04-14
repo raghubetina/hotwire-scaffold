@@ -17,6 +17,9 @@ class ThingsController < ApplicationController
 
   # GET /things/1/edit
   def edit
+    respond_to do |format|
+      format.turbo_stream
+    end
   end
 
   # POST /things or /things.json

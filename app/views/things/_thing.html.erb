@@ -4,7 +4,7 @@
     <%= thing.name %>
 
     <div>
-      <%= link_to "Edit", edit_thing_path(thing) %> |
+      <%= link_to "Edit", edit_thing_path(thing), data: { turbo_stream: true } %> |
 
       <%= link_to "Destroy", thing, data: { turbo: true, turbo_method: "delete" } %>
     </div>

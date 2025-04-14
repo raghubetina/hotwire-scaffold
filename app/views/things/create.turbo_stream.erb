@@ -1,0 +1,5 @@
+<turbo-stream action="refresh"></turbo-stream>
+
+<%= turbo_stream.replace dom_id(Thing, :form) do %>
+  <%= render "things/new_form", thing: Thing.new %>
+<% end %>

@@ -9,4 +9,8 @@
 #
 class Thing < ApplicationRecord
   validates :name, presence: true
+
+  after_create_commit -> { broadcast_refresh_to "new_thing" }
+  after_update_commit -> { broadcast_refresh_to self }
+  after_destroy_commit -> { broadcast_refresh_to self }
 end

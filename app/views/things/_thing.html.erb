@@ -1,7 +1,9 @@
-<div id="<%= dom_id thing %>">
-  <p>
-    <strong>Name:</strong>
+<div id="<%= dom_id(thing) %>" style="display: flex; justify-content: space-between; max-width: 500px; border: thin grey solid; padding: 10px">
     <%= thing.name %>
-  </p>
 
+    <div>
+      <%= link_to "Edit", edit_thing_path(thing) %> |
+
+      <%= link_to "Destroy", thing, data: { turbo: true, turbo_method: "delete" } %>
+    </div>
 </div>

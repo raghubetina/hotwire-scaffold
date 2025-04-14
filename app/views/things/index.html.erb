@@ -7,10 +7,9 @@
 <div id="things">
   <% @things.each do |thing| %>
     <%= render thing %>
-    <p>
-      <%= link_to "Show this thing", thing %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New thing", new_thing_path %>
+<div style="display: flex; justify-content: space-between; max-width: 500px; border: thin grey solid; padding: 10px">
+  <%= render "form", thing: Thing.new %>
+</div>

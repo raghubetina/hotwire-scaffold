@@ -47,6 +47,7 @@ class ThingsController < ApplicationController
         format.html { redirect_to @thing, notice: "Thing was successfully updated." }
         format.json { render :show, status: :ok, location: @thing }
       else
+        format.turbo_stream { render "edit" }
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @thing.errors, status: :unprocessable_entity }
       end

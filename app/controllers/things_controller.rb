@@ -32,6 +32,7 @@ class ThingsController < ApplicationController
         format.html { redirect_back fallback_location: root_url, notice: "Thing was successfully created." }
         format.json { render :show, status: :created, location: @thing }
       else
+        format.turbo_stream { render "create_validation_errors" }
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @thing.errors, status: :unprocessable_entity }
       end

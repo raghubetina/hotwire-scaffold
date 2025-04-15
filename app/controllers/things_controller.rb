@@ -3,7 +3,7 @@ class ThingsController < ApplicationController
 
   # GET /things or /things.json
   def index
-    @things = Thing.all
+    @things = Thing.order(:created_at)
   end
 
   # GET /things/1 or /things/1.json
@@ -42,6 +42,7 @@ class ThingsController < ApplicationController
   def update
     respond_to do |format|
       if @thing.update(thing_params)
+        format.turbo_stream
         format.html { redirect_to @thing, notice: "Thing was successfully updated." }
         format.json { render :show, status: :ok, location: @thing }
       else

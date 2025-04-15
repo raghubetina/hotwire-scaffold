@@ -1,3 +1,5 @@
-<div id="<%= dom_id(thing) %>" style="display: flex; justify-content: space-between; max-width: 500px; border: thin grey solid; padding: 10px">
+<div id="<%= dom_id(thing) %>" style="display: flex; justify-content: space-between; max-width: 500px; border: thin grey solid; padding: 10px" data-turbo-permanent>
   <%= render "form", thing: thing %>
+
+  <%= turbo_stream_from thing %>
 </div>

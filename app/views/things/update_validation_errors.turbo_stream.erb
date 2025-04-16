@@ -1,0 +1,5 @@
+<%= turbo_stream.update @thing do %>
+  <%= render "form", thing: @thing %>
+
+  <%= turbo_stream_from @thing %>
+<% end %>
